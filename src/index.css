@@ -6,3 +6,15 @@
 @import '@fontsource/inter/600.css';
 @import '@fontsource/inter/700.css';
 
+.hide-scrollbar {
+    /* For Internet Explorer, Edge */
+    -ms-overflow-style: none;
+  
+    /* For Firefox */
+    scrollbar-width: none;
+  
+    /* For Chrome, Safari, and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }

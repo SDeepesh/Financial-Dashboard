@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '../components/Dashboard/Card';
 import RecentTransactions from '../components/Dashboard/RecentTransaction';
 import WeeklyActivityChart from '../components/Dashboard/WeeklyActivityChart';
@@ -8,29 +8,36 @@ import BalanceHistoryChart from '../components/Dashboard/BalanceHistoryChart';
 import cardIcon from './../assets/images/recentTransactions/card.svg';
 import paypalIcon from './../assets/images/recentTransactions/paypal.svg';
 import walletIcon from './../assets/images/recentTransactions/wallet.svg';
+import { fetchCardData } from '../app/services/fetchCardDetails';
 
-const transactions = [
-  {
-    description: 'Deposit from my Card',
-    date: '28 January 2021',
-    amount: -850,
-    icon: cardIcon,
-  },
-  {
-    description: 'Deposit Paypal',
-    date: '25 January 2021',
-    amount: 2500,
-    icon: paypalIcon,
-  },
-  {
-    description: 'Jemi Wilson',
-    date: '21 January 2021',
-    amount: 5400,
-    icon: walletIcon,
-  },
-];
+const iconMapping = {
+  cardIcon: cardIcon,
+  paypalIcon: paypalIcon,
+  walletIcon: walletIcon,
+};
 
 const DashboardPage = () => {
+  const [cards, setCards] = useState([]);
+  const [transactions, setTransactions] = useState([]);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const data = await fetchCardData();
+        setCards(data.cards);
+        const mappedTransactions = data.transactions.map((txn) => ({
+          ...txn,
+          icon: iconMapping[txn.icon], // Assuming iconMapping is defined elsewhere
+        }));
+        setTransactions(mappedTransactions);
+      } catch (error) {
+        // Handle error, e.g., set error state, show error messages, etc.
+      }
+    };
+
+    loadData();
+  }, []);
+
   return (
     <div className="space-y-6">
       <div className="flex flex-wrap gap-6 lg:flex-nowrap pb-6 lg:pb-0">
@@ -43,20 +50,17 @@ const DashboardPage = () => {
               See All
             </p>
           </div>
-          <div className="flex gap-4 sm:gap-[20px] overflow-x-auto whitespace-nowrap touch-pan-x scrollbar-hide">
-            <Card
-              balance="5,756"
-              cardHolder="Eddy Cusuma"
-              cardNumber="3778434312311234"
-              expiry="12/22"
-            />
-            <Card
-              balance="5,756"
-              cardHolder="Eddy Cusuma"
-              cardNumber="3778434312311234"
-              expiry="12/22"
-              theme="light"
-            />
+          <div className="flex gap-4 sm:gap-[20px] overflow-x-auto whitespace-nowrap touch-pan-x hide-scrollbar">
+            {cards.map((card) => (
+              <Card
+                key={card.id}
+                balance={card.balance}
+                cardHolder={card.cardHolder}
+                cardNumber={card.cardNumber}
+                expiry={card.expiry}
+                theme={card.theme}
+              />
+            ))}
           </div>
         </div>
         <div className="w-full lg:w-1/3 mt-6 lg:mt-0">

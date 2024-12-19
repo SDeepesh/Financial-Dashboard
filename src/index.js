@@ -3,8 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import configureAxios from './app/api/configureAxios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+configureAxios();
+
 root.render(
   <React.StrictMode>
     <App />

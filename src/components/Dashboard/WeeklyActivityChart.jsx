@@ -18,7 +18,7 @@ const WeeklyActivityChart = () => {
       {
         label: 'Deposit',
         backgroundColor: '#232323',
-        data: [500, 200, 300, 450, 100, 300, 400],
+        data: [500, 250, 350, 450, 280, 350, 400],
         barPercentage: 0.6,
         categoryPercentage: 0.5,
         borderRadius: 30,
@@ -27,7 +27,7 @@ const WeeklyActivityChart = () => {
       {
         label: 'Withdraw',
         backgroundColor: '#396AFF',
-        data: [400, 350, 350, 500, 150, 350, 350],
+        data: [400, 200, 300, 400, 220, 280, 350],
         barPercentage: 0.6,
         categoryPercentage: 0.5,
         borderRadius: 30,
