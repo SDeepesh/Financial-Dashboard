@@ -1,6 +1,7 @@
 import React from 'react';
 
 const RecentTransactions = ({ transactions }) => {
+
   return (
     <div className="bg-white p-4 sm:p-6 rounded-[25px] w-full max-w-full h-full max-h-[235px]">
       {transactions.map((txn, index) => (
@@ -9,7 +10,11 @@ const RecentTransactions = ({ transactions }) => {
           className="flex justify-between items-center mb-[10px] last:mb-0"
         >
           <div className="flex items-center gap-4">
-            <img src={txn.icon} alt="Transaction Icon" className="w-[55px] h-[55px]" />
+            <img
+              src={txn.icon}
+              alt="Transaction Icon"
+              className="w-[55px] h-[55px]"
+            />
             <div>
               <p className="font-semibold text-sm sm:text-base">
                 {txn.description}

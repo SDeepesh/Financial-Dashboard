@@ -27,8 +27,6 @@ const BalanceHistoryChart = () => {
         label: 'Balance',
         data: [200, 400, 350, 700, 450, 600, 750],
         borderColor: '#1814F3',
-        backgroundColor: 'rgba(255, 0, 0, 0.5)',
-        fill: true,
         tension: 0.5,
         borderWidth: 3,
         pointRadius: 0,
