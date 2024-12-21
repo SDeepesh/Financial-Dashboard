@@ -71,12 +71,14 @@ const EditProfile = () => {
                 src={profilePicture}
                 alt="Profile"
                 className="w-[90px] h-[90px] rounded-full object-cover"
+                width="auto"
+                height="auto"
               />
               <label
                 htmlFor="profilePicture"
                 className="absolute bottom-0 right-[-5px] cursor-pointer"
               >
-                <img src={Pencil} alt="edit" />
+                <img src={Pencil} alt="edit" width="auto" height="auto" />
               </label>
               <input
                 type="file"

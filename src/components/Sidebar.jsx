@@ -68,6 +68,8 @@ const Sidebar = ({ isOpen }) => {
                   <img
                     src={item.icon}
                     alt={`${item.name} icon`}
+                    width="auto"
+                    height="auto"
                     className={`w-5 h-5 xl:w-6 xl:h-6 mr-[26px] ${
                       location.pathname === item.path
                         ? 'filter-invert'
