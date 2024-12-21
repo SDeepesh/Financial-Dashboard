@@ -2,7 +2,7 @@
 # Financial Dashboard
 
 ## Overview
-This project is a financial dashboard built with React, Redux, and Tailwind CSS. It integrates various components to provide users with insights into their financial activities. The application features responsive design, dynamic data visualization, and modular reusable components.
+This project is a financial dashboard built with React, Redux, Chart.js and Tailwind CSS. It integrates various components to provide users with insights into their financial activities. The application features responsive design, dynamic data visualization, and modular reusable components.
 
 ---
 
@@ -101,29 +101,29 @@ This project is a financial dashboard built with React, Redux, and Tailwind CSS.
 
 ## Key Features by Component
 
-### `Card.jsx`【24†source】
+### `Card.jsx`
 - **Dynamic Themes**: Light and dark themes with conditional rendering.
 - **Reusable Component**: Displays card details like balance, holder, expiry date, and masked card number.
 
-### `RecentTransactions.jsx`【21†source】
+### `RecentTransactions.jsx`
 - **Transaction Mapping**: Dynamically displays transaction icons and styles based on the amount.
 
-### `WeeklyActivityChart.jsx`【22†source】
+### `WeeklyActivityChart.jsx`
 - **Bar Chart**: Visualizes weekly financial data.
 - **Customization**: Configurable legends, tooltips, and axis styles.
 
-### `ExpenseStatistics.jsx`【25†source】
+### `ExpenseStatistics.jsx`
 - **Pie Chart**: Displays expense statistics with data labels.
 - **Interactive Design**: Highlights segments and displays percentages.
 
-### `QuickTransfer.jsx`【26†source】
+### `QuickTransfer.jsx`
 - **User-Friendly Scrolling**: Smooth horizontal scrolling for selecting recipients.
 - **Amount Input**: Customizable and styled input for transfer amounts.
 
-### `BalanceHistoryChart.jsx`【23†source】
+### `BalanceHistoryChart.jsx`
 - **Line Chart**: Displays trends in financial balance over time.
 - **Customized Gridlines**: Improves data readability with styled scales.
 
-### `ProfileEdit.jsx`【27†source】
+### `ProfileEdit.jsx`
 - **Formik Forms**: Handles profile editing with validation.
 - **Profile Picture Upload**: Allows users to preview uploaded images.
