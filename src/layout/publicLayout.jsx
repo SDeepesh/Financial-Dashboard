@@ -30,7 +30,7 @@ const PublicLayout = ({ children }) => {
       <Sidebar isOpen={isSidebarOpen} />
       <div className="flex-1 flex flex-col">
         <TopNavbar onToggleSidebar={toggleSidebar} />
-        <main className="flex-1 pt-[24px] pb-[40px] px-[25px] lg:px-[40px] overflow-y-auto">{children}</main>
+        <main className="flex-1 pt-[25px] md:pt-[30px] pb-[40px] px-[25px] lg:px-[40px] overflow-y-auto">{children}</main>
       </div>
     </div>
   );

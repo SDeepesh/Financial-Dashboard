@@ -1,11 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import Search from './../assets/images/topbar/search.svg';
 import Notification from './../assets/images/topbar/notification.svg';
-import ProfilePic from './../assets/images/topbar/profile-pic.svg';
+import DefaultProfilePic from './../assets/images/topbar/profile-pic.svg';
 import Settings from './../assets/images/topbar/settings.svg';
 import Toogle from './../assets/images/topbar/toogle.svg';
 
 const TopNavbar = ({ onToggleSidebar }) => {
+  const profilePicture =
+    useSelector((state) => state.user.profilePicture) || DefaultProfilePic;
+
   return (
     <header className="bg-white px-[25px] xl:px-[40px] py-[20px]">
       <div className="flex items-center justify-between">
@@ -52,9 +56,10 @@ const TopNavbar = ({ onToggleSidebar }) => {
               height="auto"
             />
           </button>
+          {/* Profile Picture */}
           <img
-            className="w-[30px] xl:w-[60px]"
-            src={ProfilePic}
+            className="w-[30px] xl:w-[60px] rounded-full object-cover"
+            src={profilePicture}
             alt="profile-picture"
           />
         </div>

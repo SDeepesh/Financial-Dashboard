@@ -43,7 +43,13 @@ const Sidebar = ({ isOpen }) => {
           tabIndex={-1}
         >
           <div className="text-center p-5 xl:pt-[31px] xl:pb-[34px] xl:pl-[38px] xl:pr-[45px]">
-            <img className="mx-auto xl:mx-0 w-[145px] xl:w-[167px]" src={Logo} alt="site-logo" width="167" height="auto" />
+            <img
+              className="mx-auto xl:mx-0 w-[145px] xl:w-[167px]"
+              src={Logo}
+              alt="site-logo"
+              width="167"
+              height="auto"
+            />
           </div>
           <ul className="pt-[12px]">
             {navItems.map((item) => (
@@ -62,9 +68,15 @@ const Sidebar = ({ isOpen }) => {
                   <img
                     src={item.icon}
                     alt={`${item.name} icon`}
-                    className="w-5 h-5 xl:w-6 xl:h-6 mr-[26px]"
+                    className={`w-5 h-5 xl:w-6 xl:h-6 mr-[26px] ${
+                      location.pathname === item.path
+                        ? 'filter-invert'
+                        : 'filter-inactive'
+                    }`}
                   />
-                  <span className="text-[15px] xl:text-[18px]">{item.name}</span>
+                  <span className="text-[15px] xl:text-[18px]">
+                    {item.name}
+                  </span>
                 </Link>
               </li>
             ))}
