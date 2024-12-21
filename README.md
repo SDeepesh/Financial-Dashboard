@@ -1,70 +1,129 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Financial Dashboard
 
-## Available Scripts
+## Overview
+This project is a financial dashboard built with React, Redux, and Tailwind CSS. It integrates various components to provide users with insights into their financial activities. The application features responsive design, dynamic data visualization, and modular reusable components.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Dashboard Components
+1. **My Cards**
+   - Displays a list of user credit/debit cards with details such as balance, cardholder name, and expiry date.
+   - Allows users to navigate to the full list of cards.
+   - Component: `Card.jsx`【24†source】.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Recent Transactions**
+   - Lists recent financial transactions with details such as description, date, and amount.
+   - Dynamically highlights positive or negative transactions.
+   - Component: `RecentTransactions.jsx`【21†source】.
 
-### `npm test`
+3. **Weekly Activity Chart**
+   - Visualizes weekly financial activity using a bar chart powered by Chart.js.
+   - Configurable chart options for responsiveness and user-friendly design.
+   - Component: `WeeklyActivityChart.jsx`【22†source】.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. **Expense Statistics**
+   - Displays a breakdown of expenses in a pie chart format.
+   - Includes percentage labels and customized tooltips.
+   - Component: `ExpenseStatistics.jsx`【25†source】.
 
-### `npm run build`
+5. **Quick Transfer**
+   - Allows users to quickly transfer funds to frequent recipients.
+   - Includes user selection, scrollable lists, and an amount input field.
+   - Component: `QuickTransfer.jsx`【26†source】.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+6. **Balance History Chart**
+   - Shows the user's financial balance history over time using a line chart.
+   - Scales and gridlines are customized for better visualization.
+   - Component: `BalanceHistoryChart.jsx`【23†source】.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Profile Management
+- Users can view and edit their profile information such as name, email, and address.
+- Includes profile picture upload with a live preview feature.
+- Built using Formik for form handling and Yup for validation.
+- Component: `ProfileEdit.jsx`【27†source】.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Technologies Used
+- **React**: Core library for building user interfaces.
+- **Redux**: State management for user and dashboard data.
+- **Chart.js**: For rendering bar, pie, and line charts.
+- **Formik & Yup**: Form management and validation for the profile edit form.
+- **Tailwind CSS**: Utility-first CSS framework for responsive and consistent styling.
+- **React-Router-Dom**: For client-side routing and navigation.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Setup Instructions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/financial-dashboard.git
+   cd financial-dashboard
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-## Learn More
+4. Open the application in your browser:
+   ```
+   http://localhost:3000
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## File Structure
 
-### Code Splitting
+### Dashboard Components
+- `Card.jsx` – Displays card information.
+- `RecentTransactions.jsx` – Lists recent financial transactions.
+- `WeeklyActivityChart.jsx` – Weekly activity bar chart.
+- `ExpenseStatistics.jsx` – Expense pie chart.
+- `QuickTransfer.jsx` – Quick fund transfer feature.
+- `BalanceHistoryChart.jsx` – Financial balance history chart.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Profile Management
+- `ProfileEdit.jsx` – User profile editing form.
 
-### Analyzing the Bundle Size
+### Utilities
+- Utility functions and reusable styles for consistent UI.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## Key Features by Component
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### `Card.jsx`【24†source】
+- **Dynamic Themes**: Light and dark themes with conditional rendering.
+- **Reusable Component**: Displays card details like balance, holder, expiry date, and masked card number.
 
-### Advanced Configuration
+### `RecentTransactions.jsx`【21†source】
+- **Transaction Mapping**: Dynamically displays transaction icons and styles based on the amount.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### `WeeklyActivityChart.jsx`【22†source】
+- **Bar Chart**: Visualizes weekly financial data.
+- **Customization**: Configurable legends, tooltips, and axis styles.
 
-### Deployment
+### `ExpenseStatistics.jsx`【25†source】
+- **Pie Chart**: Displays expense statistics with data labels.
+- **Interactive Design**: Highlights segments and displays percentages.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### `QuickTransfer.jsx`【26†source】
+- **User-Friendly Scrolling**: Smooth horizontal scrolling for selecting recipients.
+- **Amount Input**: Customizable and styled input for transfer amounts.
 
-### `npm run build` fails to minify
+### `BalanceHistoryChart.jsx`【23†source】
+- **Line Chart**: Displays trends in financial balance over time.
+- **Customized Gridlines**: Improves data readability with styled scales.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### `ProfileEdit.jsx`【27†source】
+- **Formik Forms**: Handles profile editing with validation.
+- **Profile Picture Upload**: Allows users to preview uploaded images.
