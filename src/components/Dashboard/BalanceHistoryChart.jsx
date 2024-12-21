@@ -19,20 +19,7 @@ ChartJS.register(
   Legend
 );
 
-const BalanceHistoryChart = () => {
-  const chartData = {
-    labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
-    datasets: [
-      {
-        label: 'Balance',
-        data: [200, 400, 350, 700, 450, 600, 750],
-        borderColor: '#1814F3',
-        tension: 0.5,
-        borderWidth: 3,
-        pointRadius: 0,
-      },
-    ],
-  };
+const BalanceHistoryChart = ({ data }) => {
 
   const chartOptions = {
     responsive: true,
@@ -43,7 +30,7 @@ const BalanceHistoryChart = () => {
           color: '#DFE5EE',
           borderDash: [5, 5],
           drawBorder: true,
-          drawOnChartArea: true, // Do not draw grid lines on the chart area
+          drawOnChartArea: true,
         },
         ticks: { color: '#718EBF', font: { size: 14 } },
         borderColor: '#718EBF',
@@ -55,7 +42,7 @@ const BalanceHistoryChart = () => {
           color: '#DFE5EE',
           borderDash: [5, 5],
           drawBorder: true,
-          drawOnChartArea: true, // Do not draw grid lines on the chart area
+          drawOnChartArea: true,
         },
         ticks: { color: '#718EBF', font: { size: 13 }, stepSize: 200 },
         beginAtZero: true,
@@ -76,8 +63,8 @@ const BalanceHistoryChart = () => {
   };
 
   return (
-    <div className="bg-white lg:p-6 rounded-[25px] w-full h-[276px]">
-      <Line data={chartData} options={chartOptions} className="max-w-full" />
+    <div className="bg-white lg:p-6 rounded-[25px] w-full h-[287px]">
+      <Line data={data} options={chartOptions} className="max-w-full" />
     </div>
   );
 };

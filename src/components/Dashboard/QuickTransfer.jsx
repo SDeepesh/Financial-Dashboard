@@ -1,21 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
-import user5 from '../../assets/images/quickTransfer/user-1.svg';
-import user2 from '../../assets/images/quickTransfer/user-2.svg';
-import user3 from '../../assets/images/quickTransfer/user-3.svg';
-import user4 from '../../assets/images/quickTransfer/user-4.svg';
-import user1 from '../../assets/images/quickTransfer/user-5.svg';
 import Arrow from '../../assets/images/quickTransfer/arrow.svg';
 import Send from '../../assets/images/quickTransfer/send.svg';
 
-const QuickTransfer = () => {
-  const users = [
-    { id: 1, name: 'Livia Bator', role: 'CEO', image: user1 },
-    { id: 2, name: 'Randy Press', role: 'Director', image: user2 },
-    { id: 3, name: 'Workman', role: 'Designer', image: user3 },
-    { id: 4, name: 'Jane Doe', role: 'Engineer', image: user4 },
-    { id: 5, name: 'John Smith', role: 'Manager', image: user5 },
-  ];
-
+const QuickTransfer = ({ data }) => {
   const scrollContainer = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedUserId, setSelectedUserId] = useState(null);
@@ -29,7 +16,7 @@ const QuickTransfer = () => {
   const handleScroll = (direction) => {
     setCurrentIndex((prevIndex) => {
       const newIndex = direction === 'right' ? prevIndex + 3 : prevIndex - 3;
-      return newIndex >= 0 && newIndex < users.length ? newIndex : 0;
+      return newIndex >= 0 && newIndex < data.length ? newIndex : 0;
     });
   };
 
@@ -50,7 +37,7 @@ const QuickTransfer = () => {
           role="listbox"
           aria-label="User selection list"
         >
-          {users.map((user) => (
+          {data.map((user) => (
             <div
               key={user.id}
               className="flex flex-col items-center min-w-max cursor-pointer"
