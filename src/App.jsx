@@ -4,7 +4,7 @@ import AppRoute from './AppRoute.jsx';
 
 function App() {
   return (
-    <div className="App font-inter text-primary bg-white xl:bg-[#E6EFF5]">
+    <div className="App font-inter text-primary bg-[#E6EFF5]">
       <AppRoute />
     </div>
   );
