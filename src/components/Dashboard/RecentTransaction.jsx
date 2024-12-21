@@ -1,7 +1,6 @@
 import React from 'react';
 
 const RecentTransactions = ({ transactions }) => {
-
   return (
     <div className="bg-white p-4 sm:p-6 rounded-[25px] w-full max-w-full h-full max-h-[235px]">
       {transactions.map((txn, index) => (
@@ -14,6 +13,8 @@ const RecentTransactions = ({ transactions }) => {
               src={txn.icon}
               alt="Transaction Icon"
               className="w-[55px] h-[55px]"
+              width="auto"
+              height="auto"
             />
             <div>
               <p className="font-semibold text-sm sm:text-base">

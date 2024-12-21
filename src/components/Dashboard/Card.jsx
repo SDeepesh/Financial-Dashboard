@@ -27,7 +27,13 @@ const Card = ({ balance, cardHolder, cardNumber, expiry, theme = 'dark' }) => {
             <p className={textClasses()}>Balance</p>
             <h3 className={titleClasses}>${balance}</h3>
           </div>
-          <img src={isDark ? LightChip : DarkChip} alt="chip" className="w-[29px] lg:w-auto" />
+          <img
+            src={isDark ? LightChip : DarkChip}
+            width="auto"
+            height="auto"
+            alt="chip"
+            className="w-[29px] lg:w-auto"
+          />
         </div>
 
         <div className="flex gap-16 lg:mb-2">
@@ -45,12 +51,12 @@ const Card = ({ balance, cardHolder, cardNumber, expiry, theme = 'dark' }) => {
       <div
         className={`${containerClasses} rounded-b-2xl flex justify-between items-center p-[14px] lg:p-[20px]`}
       >
-        <h2 className={titleClasses}>
-          {formatCardNumber(cardNumber)}
-        </h2>
+        <h2 className={titleClasses}>{formatCardNumber(cardNumber)}</h2>
         <img
           src={isDark ? MasterCardDark : MasterCardLight}
           alt="mastercard logo"
+          width="auto"
+          height="auto"
         />
       </div>
     </div>

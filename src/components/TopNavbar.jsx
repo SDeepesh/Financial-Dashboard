@@ -35,6 +35,8 @@ const TopNavbar = ({ onToggleSidebar }) => {
             <img
               className="absolute left-[25px] top-[15px] h-5 w-5 text-gray-400"
               src={Search}
+              width="auto"
+              height="auto"
               alt="search-icon"
             />
           </div>
@@ -61,6 +63,8 @@ const TopNavbar = ({ onToggleSidebar }) => {
             className="w-[30px] xl:w-[60px] rounded-full object-cover"
             src={profilePicture}
             alt="profile-picture"
+            width="auto"
+            height="auto"
           />
         </div>
       </div>
@@ -74,6 +78,8 @@ const TopNavbar = ({ onToggleSidebar }) => {
           className="absolute left-[25px] top-[10px] h-5 w-5 text-gray-400"
           src={Search}
           alt="search-icon"
+          width="auto"
+          height="auto"
         />
       </div>
     </header>

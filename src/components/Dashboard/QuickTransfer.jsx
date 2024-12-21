@@ -53,6 +53,8 @@ const QuickTransfer = ({ data }) => {
               <img
                 src={user.image}
                 alt={user.name}
+                width="auto"
+                height="auto"
                 className="w-[70px] h-[70px] rounded-full object-cover mb-4"
               />
               <p
@@ -73,7 +75,7 @@ const QuickTransfer = ({ data }) => {
           className="bg-white shadow-lg rounded-full p-[22px] max-w-[50px] max-h-[50px] focus:outline-none"
           aria-label="Scroll right"
         >
-          <img src={Arrow} alt="Scroll right" />
+          <img src={Arrow} alt="Scroll right" width="auto" height="auto" />
         </button>
       </div>
       <div className="flex items-center gap-[24px]">
@@ -93,7 +95,7 @@ const QuickTransfer = ({ data }) => {
             onClick={handleSendClick}
           >
             <span>Send</span>
-            <img src={Send} alt="send-icon" />
+            <img src={Send} alt="send-icon" width="auto" height="auto" />
           </button>
         </div>
       </div>
