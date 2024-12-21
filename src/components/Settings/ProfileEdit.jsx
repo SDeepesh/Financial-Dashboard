@@ -89,7 +89,10 @@ const EditProfile = () => {
 
             <div className="flex flex-col md:grid md:grid-cols-2 w-full gap-x-[30px] gap-y-[22px]">
               <div>
-                <label htmlFor="name" className="block text-[13px] md:text-base text-primary">
+                <label
+                  htmlFor="name"
+                  className="block text-[13px] md:text-base text-primary"
+                >
                   Your Name
                 </label>
                 <Field
@@ -120,7 +123,10 @@ const EditProfile = () => {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-[13px] md:text-base text-primary">
+                <label
+                  htmlFor="email"
+                  className="block text-[13px] md:text-base text-primary"
+                >
                   Email
                 </label>
                 <Field
@@ -155,7 +161,10 @@ const EditProfile = () => {
                 />
               </div>
               <div>
-                <label htmlFor="dob" className="block text-[13px] md:text-base text-primary">
+                <label
+                  htmlFor="dob"
+                  className="block text-[13px] md:text-base text-primary"
+                >
                   Date of Birth
                 </label>
                 <Field
@@ -171,7 +180,49 @@ const EditProfile = () => {
                 />
               </div>
               <div>
-                <label htmlFor="city" className="block text-[13px] md:text-base text-primary">
+                <label
+                  htmlFor="presentAddress"
+                  className="block text-[13px] md:text-base text-primary"
+                >
+                  Present Address
+                </label>
+                <Field
+                  id="presentAddress"
+                  type="text"
+                  name="presentAddress"
+                  className="w-full h-[50px] mt-[9px] md:mt-[11px] text-[12px] md:text-base text-[#718EBF] border rounded-[15px] px-[20px] py-2 focus:outline-none"
+                />
+                <ErrorMessage
+                  name="presentAddress"
+                  component="div"
+                  className="text-red-500 text-xs"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="permanentAddress"
+                  className="block text-[13px] md:text-base text-primary"
+                >
+                  Permanent Address
+                </label>
+                <Field
+                  id="permanentAddress"
+                  type="text"
+                  name="permanentAddress"
+                  className="w-full h-[50px] mt-[9px] md:mt-[11px] text-[12px] md:text-base text-[#718EBF] border rounded-[15px] px-[20px] py-2 focus:outline-none"
+                />
+                <ErrorMessage
+                  name="permanentAddress"
+                  component="div"
+                  className="text-red-500 text-xs"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="city"
+                  className="block text-[13px] md:text-base text-primary"
+                >
                   City
                 </label>
                 <Field

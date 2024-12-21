@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Card from '../components/Dashboard/Card';
 import RecentTransactions from '../components/Dashboard/RecentTransaction';
 import WeeklyActivityChart from '../components/Dashboard/WeeklyActivityChart';
@@ -48,6 +49,7 @@ const DashboardPage = () => {
   const [quickTransferData, setQuickTransferData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadData = async () => {
@@ -97,6 +99,7 @@ const DashboardPage = () => {
               type="button"
               className="text-[14px] sm:text-[17px] font-semibold text-secondary cursor-pointer hover:underline"
               aria-label="See All Cards"
+              onClick={() => navigate('/credit-cards')}
             >
               See All
             </button>
@@ -161,7 +164,7 @@ const DashboardPage = () => {
         </div>
       </div>
       <div className="flex flex-wrap gap-6 lg:flex-nowrap pb-6 lg:pb-0">
-        <div className="w-full lg:w-1/3">
+        <div className="w-full lg:w-[40%]">
           <h2 className="text-base md:text-h2 font-semibold mb-[12px] lg:mb-[20px]">
             Quick Transfer
           </h2>
@@ -173,7 +176,7 @@ const DashboardPage = () => {
             <p>No quick transfer data available.</p>
           )}
         </div>
-        <div className="w-full lg:w-2/3">
+        <div className="w-full lg:w-[60%]">
           <h2 className="text-base md:text-h2 font-semibold mb-[12px] lg:mb-[20px]">
             Balance History
           </h2>
