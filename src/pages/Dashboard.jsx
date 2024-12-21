@@ -9,6 +9,8 @@ import cardIcon from './../assets/images/recentTransactions/card.svg';
 import paypalIcon from './../assets/images/recentTransactions/paypal.svg';
 import walletIcon from './../assets/images/recentTransactions/wallet.svg';
 import { fetchCardData } from '../app/services/fetchCardDetails';
+import CardSkeleton from '../components/SkeletonLoaders/CardSkeleton';
+import TransactionsSkeleton from '../components/SkeletonLoaders/TransactionsSkeleton';
 
 const iconMapping = {
   cardIcon: cardIcon,
@@ -19,6 +21,7 @@ const iconMapping = {
 const DashboardPage = () => {
   const [cards, setCards] = useState([]);
   const [transactions, setTransactions] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
@@ -31,7 +34,9 @@ const DashboardPage = () => {
         }));
         setTransactions(mappedTransactions);
       } catch (error) {
-        // Handle error, e.g., set error state, show error messages, etc.
+        console.error('Error fetching data:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -51,23 +56,29 @@ const DashboardPage = () => {
             </p>
           </div>
           <div className="flex gap-4 sm:gap-[20px] overflow-x-auto whitespace-nowrap touch-pan-x hide-scrollbar">
-            {cards.map((card) => (
-              <Card
-                key={card.id}
-                balance={card.balance}
-                cardHolder={card.cardHolder}
-                cardNumber={card.cardNumber}
-                expiry={card.expiry}
-                theme={card.theme}
-              />
-            ))}
+            {isLoading
+              ? Array.from({ length: 2 }, (_, i) => <CardSkeleton key={i} />)
+              : cards.map((card) => (
+                  <Card
+                    key={card.id}
+                    balance={card.balance}
+                    cardHolder={card.cardHolder}
+                    cardNumber={card.cardNumber}
+                    expiry={card.expiry}
+                    theme={card.theme}
+                  />
+                ))}
           </div>
         </div>
         <div className="w-full lg:w-1/3 mt-6 lg:mt-0">
           <h2 className="text-base md:text-h2 font-semibold mb-[22px]">
             Recent Transactions
           </h2>
-          <RecentTransactions transactions={transactions} />
+          {isLoading ? (
+            <TransactionsSkeleton />
+          ) : (
+            <RecentTransactions transactions={transactions} />
+          )}
         </div>
       </div>
 
