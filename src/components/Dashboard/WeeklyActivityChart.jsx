@@ -11,31 +11,7 @@ import {
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
-const WeeklyActivityChart = () => {
-  const chartData = {
-    labels: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-    datasets: [
-      {
-        label: 'Deposit',
-        backgroundColor: '#232323',
-        data: [500, 250, 350, 450, 280, 350, 400],
-        barPercentage: 0.6,
-        categoryPercentage: 0.5,
-        borderRadius: 30,
-        borderSkipped: false,
-      },
-      {
-        label: 'Withdraw',
-        backgroundColor: '#396AFF',
-        data: [400, 200, 300, 400, 220, 280, 350],
-        barPercentage: 0.6,
-        categoryPercentage: 0.5,
-        borderRadius: 30,
-        borderSkipped: false,
-      },
-    ],
-  };
-
+const WeeklyActivityChart = ({ data }) => {
   const chartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -93,7 +69,7 @@ const WeeklyActivityChart = () => {
 
   return (
     <div className="bg-white lg:p-6 pb-5 rounded-2xl min-h-[300px] lg:min-h-[322px]">
-      <Bar data={chartData} options={chartOptions} className="max-w-full" />
+      <Bar data={data} options={chartOptions} className="max-w-full" />
     </div>
   );
 };
